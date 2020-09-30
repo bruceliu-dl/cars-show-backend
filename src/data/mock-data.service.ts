@@ -10,12 +10,12 @@ export class MockDataService {
     constructor() {}
     
     readFileFromJSON(): Observable<any> {
-        this.jsonData = fs.readFileSync(path.resolve(__dirname, '../src/data/mock-data.json').toString(), {encoding:'utf8'})
+        this.jsonData = fs.readFileSync(path.resolve(__dirname, '../../src/data/mock-data.json').toString(), {encoding:'utf8'})
         return of(JSON.parse(this.jsonData));
     }
 
     writeFileToJSON(data: Cars[]): Observable<any> {
-         fs.writeFileSync(path.resolve(__dirname, '../src/data/mock-data.json').toString(), JSON.stringify(data));
+         fs.writeFileSync(path.resolve(__dirname, '../../src/data/mock-data.json').toString(), JSON.stringify(data));
          return of(0);
     }
 }
